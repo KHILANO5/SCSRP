@@ -15,12 +15,17 @@ http://localhost:3000/api
 **Request Body**:
 ```json
 {
-  "email": "student@example.edu",
+  "email": "student@student.university.edu",
   "password": "password123",
-  "full_name": "John Doe",
-  "role": "student"  // or "admin"
+  "full_name": "John Doe"
 }
 ```
+
+> **Note on Role Assignment**:
+> The backend automatically assigns roles based on the email domain:
+> - Ends with `@student.university.edu` → Assigned **"student"** role
+> - Ends with `@admin.university.edu` → Assigned **"admin"** role
+> - Any other domain → Return 400 Error ("Invalid email domain")
 
 **Success Response** (201):
 ```json

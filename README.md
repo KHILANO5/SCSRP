@@ -48,6 +48,13 @@ mysql -u root -p scsrp < database/schema.sql
 - **Users Table**: Stores Students and Admins.
 - **Service Requests**: Stores issues with Status (Pending, In Progress, Resolved).
 
+## 🔐 User Role Logic (Important)
+
+The system automatically assigns roles based on email domain during registration:
+
+- **Student Role**: Email must end with `@student.university.edu`
+- **Admin Role**: Email must end with `@admin.university.edu`
+
 **Test Credentials (Sample Data)**:
 - **Student**: `john.doe@student.edu` / `password123`
 - **Admin**: `admin@campus.edu` / `password123`
