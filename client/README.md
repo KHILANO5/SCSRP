@@ -8,44 +8,22 @@ A modern, premium frontend application for the Smart Campus Service Request Port
 - 🎯 **Dual Dashboards**: Separate interfaces for students and administrators
 - 🔐 **Authentication**: Secure login and registration system
 - 📱 **Responsive**: Works seamlessly on desktop, tablet, and mobile devices
-- ⚡ **Fast & Lightweight**: No heavy frameworks, pure vanilla JavaScript
-
-## 📂 Project Structure
-
-```
-client/
-├── index.html              # Main HTML file with all pages and modals
-├── styles/
-│   └── main.css           # Complete design system and styles
-├── scripts/
-│   └── app.js             # Application logic and API integration
-└── README.md              # This file
-```
-
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Node.js installed
 - Backend API running on `http://localhost:3000` (see main README)
 
 ### Running the Frontend
 
-#### Option 1: Using Python (Recommended)
-
 ```bash
 cd client
-python3 -m http.server 8080
+npm install
+npm run dev
 ```
 
-Then open: `http://localhost:8080`
-
-#### Option 2: Using Node.js
-
-```bash
-cd client
-npx serve
-```
+Then open the URL shown in the terminal (usually `http://localhost:5173`)
 
 #### Option 3: Using VS Code Live Server
 

@@ -11,7 +11,7 @@
     --primary-hue: 250;
     --primary-sat: 85%;
     --primary-light: 58%;
-    
+
     --primary-50: hsl(var(--primary-hue), var(--primary-sat), 97%);
     --primary-100: hsl(var(--primary-hue), var(--primary-sat), 92%);
     --primary-200: hsl(var(--primary-hue), var(--primary-sat), 82%);
@@ -36,11 +36,11 @@
     --bg-secondary: hsl(240, 12%, 12%);
     --bg-tertiary: hsl(240, 10%, 16%);
     --bg-elevated: hsl(240, 12%, 20%);
-    
+
     --text-primary: hsl(0, 0%, 98%);
     --text-secondary: hsl(0, 0%, 75%);
     --text-tertiary: hsl(0, 0%, 55%);
-    
+
     --border-color: hsl(240, 8%, 24%);
     --border-subtle: hsl(240, 8%, 18%);
 
@@ -48,7 +48,7 @@
     --gradient-primary: linear-gradient(135deg, var(--primary-500) 0%, hsl(280, 85%, 58%) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(210, 85%, 58%) 0%, hsl(180, 75%, 48%) 100%);
     --gradient-warm: linear-gradient(135deg, hsl(35, 92%, 58%) 0%, hsl(15, 85%, 58%) 100%);
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -106,15 +106,28 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-display);
     font-weight: 700;
     line-height: 1.2;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
 
 a {
     color: var(--primary-400);
@@ -129,14 +142,11 @@ a:hover {
 /* ============================================
    Page Management
    ============================================ */
+/* Page Management handled by React Router */
 .page {
-    display: none;
     min-height: 100vh;
 }
 
-.page.active {
-    display: block;
-}
 
 /* ============================================
    Authentication Page
@@ -195,9 +205,19 @@ a:hover {
 }
 
 @keyframes float {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(30px, -30px) scale(1.1); }
-    66% { transform: translate(-20px, 20px) scale(0.9); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
 }
 
 .auth-card {
@@ -270,6 +290,7 @@ a:hover {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -795,8 +816,13 @@ a:hover {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .modal-content {
@@ -822,6 +848,7 @@ a:hover {
         opacity: 0;
         transform: translateY(40px) scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -1001,7 +1028,9 @@ a:hover {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .empty-state {
@@ -1355,7 +1384,7 @@ a:hover {
     .hero-content {
         margin-bottom: var(--space-2xl);
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
