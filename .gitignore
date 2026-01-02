@@ -1,14 +1,47 @@
+# Dependencies
 node_modules/
-.env
-*.log
-.DS_Store
-uploads/*
-!uploads/.gitkeep
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+out/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
 *~
-.idea/
-dist/
-build/
+
+# Testing & Development Scripts
+*.ps1
+*.sh
+
+# Uploads
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Temporary files
+*.tmp
+.cache/
