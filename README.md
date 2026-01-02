@@ -107,11 +107,24 @@ SCSRP/
 │   │   └── routes/            # API Endpoints
 │   └── uploads/               # User uploaded files
 │
+SCSRP/
+├── client/                     # React Frontend
+├── server/                     # Node.js Backend
 ├── database/                   # SQL Scripts
-│   └── schema.sql             # Database Schema & Seed
-│
-└── README.md                   # Project Documentation
+├── docs/                       # Project Documentation
+│   ├── PROJECT_SUMMARY.md      # Overview & Features
+│   ├── USER_GUIDE.md           # End-User Manual
+│   ├── DEVELOPER_GUIDE.md      # Technical Documentation
+│   └── API_CONTRACT.md         # API Specification
+└── README.md                   # Quick Start
 ```
+
+## 📚 Documentation
+
+- [**Project Summary**](docs/PROJECT_SUMMARY.md): High-level overview of the project.
+- [**User Guide**](docs/USER_GUIDE.md): Instructions for Students and Administrators.
+- [**Developer Guide**](docs/DEVELOPER_GUIDE.md): Architecture, project structure, and detailed setup.
+- [**API Contract**](docs/API_CONTRACT.md): Complete API endpoint specification.
 
 ## 🤝 Contributing
 
