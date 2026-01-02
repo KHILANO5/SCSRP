@@ -1,207 +1,146 @@
-# SCSRP - Smart Campus Service Request Portal
+# 🏫 SCSRP - Smart Campus Service Request Portal
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-16+-green.svg)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)](https://www.typescriptlang.org/)
+A modern, premium full-stack web application designed to streamline facility management on campus. It provides a seamless interface for students to report issues and for administrators to manage, track, and resolve them efficiently.
 
-## 📋 Overview
+![SCSRP Dashboard](https://via.placeholder.com/800x400?text=SCSRP+Dashboard+Preview)
 
-A full-stack web application for managing campus facility service requests. Students can report issues (classroom, hostel, laboratory, library, etc.), and administrators can track, assign, and resolve them efficiently.
+## ✨ Features
 
-**Features:**
-- 🔐 Role-based authentication (Student/Admin)
-- 📝 Service request management with image uploads
-- 🎯 Real-time status tracking (Pending, In Progress, Resolved)
-- 📊 Admin dashboard with statistics
-- 🔍 Advanced filtering and search
-- 📱 RESTful API architecture
+### 👨‍🎓 For Students
+- **Create Requests**: Easily report issues like broken equipment, plumbing, or electrical problems with image uploads.
+- **Real-time Tracking**: Monitor the status of requests (Pending → In Progress → Resolved).
+- **Dashboard**: View a history of all submitted requests with detailed status updates.
+- **Responsive Design**: Fully functional on desktop, tablet, and mobile devices.
 
-## 🏗️ Project Structure
+### 👨‍💼 For Administrators
+- **Centralized Dashboard**: specific entry point to view all campus service requests.
+- **Statistics Overview**: Real-time stats on pending, in-progress, and resolved requests.
+- **Request Management**: Update statuses, assign tasks to departments, and add internal notes.
+- **Advanced Filtering**: Filter requests by category (Classroom, Hostel, Lab, etc.) and status.
+
+## 🛠️ Technology Stack
+
+**Frontend**
+- **Framework**: React.js (Vite)
+- **Styling**: Vanilla CSS (Modern, Responsive, Dark Mode support)
+- **State Management**: React Context API
+- **Routing**: React Router v7
+
+**Backend**
+- **Runtime**: Node.js
+- **Framework**: Express.js (TypeScript)
+- **Database**: MySQL
+- **Authentication**: JWT (JSON Web Tokens) & Bcrypt
+- **File Handling**: Multer (for image uploads)
+
+## 🚀 Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+- **Node.js** (v16 or higher)
+- **MySQL** (v8.0 or higher)
+- **Git**
+
+### 1️⃣ Database Setup
+1.  Open your MySQL client (CLI or Workbench).
+2.  Create the database and tables using the provided schema:
+    ```bash
+    mysql -u root -p < database/schema.sql
+    ```
+    *This will create the `scsrp` database and seed it with sample data.*
+
+### 2️⃣ Backend Setup (Server)
+1.  Navigate to the server directory:
+    ```bash
+    cd server
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Configure environment variables:
+    - Create a `.env` file in the `server` directory (copy from `.env.example` if available).
+    - Add your database credentials:
+      ```env
+      PORT=3000
+      DB_HOST=localhost
+      DB_USER=root
+      DB_PASSWORD=your_password  # <--- Update this to your MySQL password
+      DB_NAME=scsrp
+      JWT_SECRET=supersecretkey123
+      ```
+4.  Start the server:
+    ```bash
+    npm run dev
+    ```
+    *The server runs on `http://localhost:3000`.*
+
+### 3️⃣ Frontend Setup (Client)
+1.  Navigate to the client directory:
+    ```bash
+    cd ../client
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+4.  Open the browser at the URL shown (usually `http://localhost:5173`).
+
+## 🔐 Login Credentials
+
+The project comes with pre-loaded users for testing:
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Student** | `john.doe@student.university.edu` | `password123` |
+| **Admin** | `admin@admin.university.edu` | `password123` |
+
+*(Additional sample users can be found in `database/schema.sql`)*
+
+## 📂 Project Structure
 
 ```
 SCSRP/
-├── server/                     # Backend API (Node.js + Express + TypeScript)
+├── client/                 # React Frontend
 │   ├── src/
-│   │   ├── controllers/        # Request handlers
-│   │   ├── middleware/         # Auth, upload handlers
-│   │   ├── routes/            # API endpoints
-│   │   ├── models/            # Database connection
-│   │   ├── types/             # TypeScript definitions
-│   │   └── utils/             # JWT utilities
-│   ├── uploads/               # File storage
-│   └── package.json
-│
-├── database/                   # MySQL Schema & Sample Data
-│   ├── schema.sql             # Main database schema
-│   ├── additional_data.sql    # Extra test data
-│   └── verify_schema.sql      # Verification queries
-│
-├── client/                     # Frontend (To be implemented)
-│
-├── docs/                       # Documentation
-│
-├── API_CONTRACT.md            # Complete API specification
+│   │   ├── components/     # Reusable UI components
+│   │   ├── pages/          # Page views (Dashboard, Login, etc.)
+│   │   ├── context/        # Auth context
+│   │   └── lib/            # API utilities
+│   └── index.html
+├── server/                 # Express Backend
+│   ├── src/
+│   │   ├── controllers/    # Request handlers
+│   │   ├── routes/         # API endpoints
+│   │   └── models/         # Database queries
+│   └── uploads/            # Stored user-uploaded images
+├── database/
+│   └── schema.sql          # Database structure & seed data
 └── README.md
 ```
 
-## 🚀 Quick Start
+## 🔌 API Documentation
 
-### Prerequisites
+The backend exposes a RESTful API. Key endpoints include:
 
-- **Node.js** v16+ and npm
-- **MySQL** v8.0+
-- **Git**
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/yourusername/SCSRP.git
-cd SCSRP
-```
-
-### 2. Database Setup
-
-```bash
-# Create database
-mysql -u root -p -e "CREATE DATABASE scsrp"
-
-# Import schema with sample data
-mysql -u root -p scsrp < database/schema.sql
-
-# (Optional) Add more test data
-mysql -u root -p scsrp < database/additional_data.sql
-```
-
-### 3. Backend Setup
-
-```bash
-cd server
-
-# Install dependencies
-npm install
-
-# Configure environment
-cp .env.example .env
-# Edit .env with your MySQL credentials
-
-# Run development server
-npm run dev
-
-# Or build for production
-npm run build
-npm start
-```
-
-The server will start at `http://localhost:3000`
-
-### 4. Test the API
-
-Use Postman, cURL, or any HTTP client to test endpoints as documented in `API_CONTRACT.md`
-
-## 🔐 Authentication
-
-### Email Domain-Based Roles
-
-The system automatically assigns roles during registration:
-
-- `@student.university.edu` → **Student** role
-- `@admin.university.edu` → **Admin** role
-- Other domains → Registration rejected
-
-### Sample Test Accounts
-
-After running `schema.sql`:
-
-**Students:**
-- `john.doe@student.university.edu` / `password123`
-- `jane.smith@student.university.edu` / `password123`
-
-**Admins:**
-- `admin@admin.university.edu` / `password123`
-
-## 📡 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login (returns JWT token)
-
-### Student Operations
-- `POST /api/requests` - Create service request
-- `GET /api/requests` - Get user's requests
-- `GET /api/requests/:id` - Get specific request
-
-### Admin Operations
-- `GET /api/admin/requests` - Get all requests
-- `PUT /api/admin/requests/:id/status` - Update status
-- `PUT /api/admin/requests/:id/assign` - Assign to department
-- `PUT /api/admin/requests/:id/notes` - Add admin notes
-- `GET /api/admin/statistics` - Dashboard statistics
-
-See [API_CONTRACT.md](API_CONTRACT.md) for complete documentation.
-
-## 🛠️ Tech Stack
-
-**Backend:**
-- Node.js + Express.js
-- TypeScript
-- MySQL with mysql2
-- JWT for authentication
-- Bcrypt for password hashing
-- Multer for file uploads
-
-**Database:**
-- MySQL 8.0+
-
-**Frontend:** (To be implemented)
-- React/Vue/Angular or HTML/CSS/JS
-
-## 📊 Database Schema
-
-### Users Table
-- `id`, `email`, `password`, `full_name`, `role`, `created_at`
-
-### Service Requests Table
-- `id`, `user_id`, `category`, `title`, `description`, `image_path`
-- `status`, `admin_notes`, `assigned_to`
-- `created_at`, `updated_at`, `resolved_at`
-
-## 🔧 Development
-
-```bash
-# Install dependencies
-cd server && npm install
-
-# Run in development mode with auto-reload
-npm run dev
-
-# Build TypeScript
-npm run build
-
-# Run production build
-npm start
-```
+-   `POST /api/auth/login` - User login
+-   `GET /api/requests` - Fetch student requests
+-   `POST /api/requests` - Create a new service request
+-   `GET /api/admin/requests` - Fetch all requests (Admin)
+-   `PUT /api/admin/requests/:id/status` - Update request status
 
 ## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
-## 👥 Authors
-
-- Your Name - [GitHub Profile](https://github.com/yourusername)
-
-## 🙏 Acknowledgments
-
-- Built for campus facility management
-- Inspired by modern ticketing systems
+This is an educational project. Contributions are welcome!
+1.  Fork the repository
+2.  Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ---
-
-**Status:** ✅ Backend Complete | ⏳ Frontend Pending | ✅ Database Complete
+Built with ❤️ for the Smart Campus initiative.

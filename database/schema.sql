@@ -69,17 +69,17 @@ CREATE TABLE service_requests (
 
 INSERT INTO users (email, password, full_name, role) VALUES
 -- Students
-('john.doe@student.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'John Doe', 'student'),
-('jane.smith@student.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Jane Smith', 'student'),
-('alice.wilson@student.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Alice Wilson', 'student'),
-('bob.johnson@student.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Bob Johnson', 'student'),
-('emily.davis@student.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Emily Davis', 'student'),
-('michael.brown@student.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Michael Brown', 'student'),
+('john.doe@student.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'John Doe', 'student'),
+('jane.smith@student.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Jane Smith', 'student'),
+('alice.wilson@student.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Alice Wilson', 'student'),
+('bob.johnson@student.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Bob Johnson', 'student'),
+('emily.davis@student.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Emily Davis', 'student'),
+('michael.brown@student.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Michael Brown', 'student'),
 
 -- Admins
-('admin@admin.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Admin User', 'admin'),
-('sarah.admin@admin.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Sarah Anderson', 'admin'),
-('tech.support@admin.university.edu', '$2b$10$YFQGqJ.7v5W5nVB5m5m5m.uQqJ.7v5W5nVB5m5m5m5m5m5m5m5m5m', 'Tech Support Admin', 'admin');
+('admin@admin.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Admin User', 'admin'),
+('sarah.admin@admin.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Sarah Anderson', 'admin'),
+('tech.support@admin.university.edu', '$2b$10$Kh3FscZ8uZCv6Ll8m9LJPe1H8cTamnKYnFANyvl8a3KFQLk7SupTi', 'Tech Support Admin', 'admin');
 
 -- Insert Sample Service Requests
 
