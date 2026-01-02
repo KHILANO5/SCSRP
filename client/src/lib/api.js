@@ -1,4 +1,5 @@
-export const API_BASE_URL = 'http://localhost:3000/api';
+// Use relative URL for API calls - Vite proxy will handle routing to backend
+export const API_BASE_URL = '/api';
 
 async function apiCall(endpoint, options = {}) {
     const token = localStorage.getItem('token');
