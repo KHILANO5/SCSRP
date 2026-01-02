@@ -1,0 +1,14 @@
+node_modules/
+.env
+*.log
+.DS_Store
+uploads/*
+!uploads/.gitkeep
+package-lock.json
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+dist/
+build/
